@@ -1,0 +1,7 @@
+main.o: main.c /usr/include/stdc-predef.h foo.h ../libother/other.h
+
+/usr/include/stdc-predef.h:
+
+foo.h:
+
+../libother/other.h:

@@ -1,0 +1,5 @@
+other.o: other.c /usr/include/stdc-predef.h other.h
+
+/usr/include/stdc-predef.h:
+
+other.h:
