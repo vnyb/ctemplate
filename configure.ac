@@ -27,6 +27,21 @@ CFLAGS+="\
 -Werror=vla \
 -Wno-unused-parameter"
 
+# debug
+AC_ARG_ENABLE(debug,
+    AS_HELP_STRING([--enable-debug], [enable debugging, default: no]),,
+    [enable_debug=no])
+
+if test "x$enable_debug" = "xyes"; then
+    CFLAGS+="-g -O0"
+    AC_DEFINE(DEBUG, true)
+    AC_DEFINE(NDEBUG, false)
+else
+    CFLAGS+="-O3"
+    AC_DEFINE(DEBUG, false)
+    AC_DEFINE(NDEBUG, true)
+fi
+
 # Project uses libraries
 AC_PROG_RANLIB
 
